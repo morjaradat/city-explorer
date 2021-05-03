@@ -30,3 +30,5 @@ Start time: ___2 pm__
 Finish time: ___5 pm__
 
 Actual time needed to complete: ___3 hours__
+
+![img](./image/ok.jpg);
