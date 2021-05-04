@@ -1,6 +1,6 @@
 import React from 'react'
 
-export class Latlon extends React.Component {
+ class Latlon extends React.Component {
     render() {
         // console.log('para')
         return (

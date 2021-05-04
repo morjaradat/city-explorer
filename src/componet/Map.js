@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image'
 
-export class Map extends React.Component {
+ class Map extends React.Component {
     render() {
         // console.log('map')
         return (
