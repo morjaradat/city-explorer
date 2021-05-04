@@ -32,3 +32,29 @@ Finish time: ___5 pm__
 Actual time needed to complete: ___3 hours__
 
 ![img](./image/ok.jpg);
+
+## lab 07
+Name of feature: ______________Custom Servers with Node and Express__________________
+
+Estimate of time needed to complete: __2hours___
+
+Start time: ___2 pm__
+
+Finish time: ___4 pm__
+
+Actual time needed to complete: ___1.5 hours__
+
+![img](./image/work-fllow2.jpg);
+
+## lab 08
+Name of feature: ______________APIs__________________
+
+Estimate of time needed to complete: __2hours___
+
+Start time: ___2 pm__
+
+Finish time: ___4 pm__
+
+Actual time needed to complete: ___1.5 hours__
+
+![img](./image/screenshot.jpeg);
