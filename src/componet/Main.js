@@ -3,8 +3,9 @@ import axios from 'axios';
 import CitySearch from './CitySearch'
 import Latlon from './Latlon'
 import Map from './Map'
+import Weather from './Weather'
 
-export class main extends React.Component {
+class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,6 +15,7 @@ export class main extends React.Component {
             location: '',
             displayMap: false,
             displayError: false,
+            weatherData:{},
 
         }
     }
@@ -21,22 +23,25 @@ export class main extends React.Component {
         e.preventDefault();
         // console.log('ture')
         try {
-            // console.log('in')
-            const url = `https://us1.locationiq.com/v1/search.php?key=pk.87b4d39520431699954da6faf9d059cc&q=${this.state.searchQuery}&format=json`;
+            const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_IQ_KEY}&q=${this.state.searchQuery}&format=json`;
             const req = await axios.get(url);
-            // console.log('in 2');
-            // console.log(req.data[0]);
+            // console.log('first');
+            const req2 = await axios.get(`${process.env.REACT_APP_CLINET}`);
+            // console.log('second');
+            // console.log(req2.data);
             await this.setState({
                 lat: req.data[0].lat,
                 lon: req.data[0].lon,
                 location: req.data[0].display_name,
                 displayMap: true,
                 displayError: false,
+                weatherData:req2.data
                 // visibility: 'visible',
             });
+            // console.log('3');
 
         } catch (err) {
-            // console.log('out')
+            console.log('out')
             await this.setState({  
                 displayMap: false,
                 displayError: true,
@@ -57,6 +62,7 @@ export class main extends React.Component {
                 <>
                 <Latlon lat ={this.state.lat} lon={this.state.lon} location={this.state.location}/>
                 <Map lat ={this.state.lat} lon={this.state.lon}/>
+                <Weather data={this.state.weatherData}/>
                 </>
                 }
 
@@ -70,4 +76,4 @@ export class main extends React.Component {
     }
 }
 
-export default main;
+export default Main;
