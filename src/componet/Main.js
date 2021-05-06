@@ -51,20 +51,27 @@ class Main extends React.Component {
         console.log('q2');
         const req2 = await axios.get(`${process.env.REACT_APP_CLINET}?lat=${this.state.lat}&lon=${this.state.lon}`);
         console.log(req2.data);
-        await  this.setState({
-            displayMap: true,
-            displayError: false,
+        this.setState({
             weatherData: req2.data
         });
     }
     movieReq = async () => {
-        console.log('q3');
-        let movieUrl = process.env.REACT_APP_MOVIE_API_URL
-        const req3 = await axios.get(`${movieUrl}?query=${this.state.searchQuery}`);
-        console.log(req3.data);
-      await  this.setState({
-            movieData: req3.data
-        });
+        try {
+            let movieUrl = process.env.REACT_APP_MOVIE_API_URL
+            const req3 = await axios.get(`${movieUrl}?query=${this.state.searchQuery}`);
+            console.log(req3.data);
+          await  this.setState({
+                movieData: req3.data,
+                displayMap: true,
+                displayError: false,
+            });
+            console.log('q3');
+
+        } catch (error) {
+            console.log('Error');
+        }
+
+
     }
     update = (e) => {
         this.setState({ searchQuery: e.target.value })
@@ -81,7 +88,7 @@ class Main extends React.Component {
                         <Latlon lat={this.state.lat} lon={this.state.lon} location={this.state.location} />
                         <Map lat={this.state.lat} lon={this.state.lon} />
                         <Weather data={this.state.weatherData} />
-                        <Movies movie={this.state.movieData}/>
+                        <Movies movie={this.state.movieData} />
                     </>
                 }
 
