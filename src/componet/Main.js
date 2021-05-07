@@ -60,7 +60,7 @@ class Main extends React.Component {
             let movieUrl = process.env.REACT_APP_MOVIE_API_URL
             const req3 = await axios.get(`${movieUrl}?query=${this.state.searchQuery}`);
             console.log(req3.data);
-          await  this.setState({
+                await  this.setState({
                 movieData: req3.data,
                 displayMap: true,
                 displayError: false,

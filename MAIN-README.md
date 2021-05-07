@@ -86,3 +86,15 @@ Finish time: ___2:30 pm__
 Actual time needed to complete: ___30 min
 
 ![img](./image/work-fllow2.jpg)
+
+## lab 10
+
+Name of feature: ______________ added cache __________________
+
+Estimate of time needed to complete: __15min___
+
+Start time: ___2 pm__
+
+Finish time: ___2:15 pm__
+
+Actual time needed to complete: ___20 min
