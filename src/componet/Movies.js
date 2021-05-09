@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
+import CardColumns from 'react-bootstrap/CardColumns'
 
 
 export class Movies extends Component {
@@ -11,6 +12,7 @@ export class Movies extends Component {
                     return (
                         <>
                             {i.imgUrl !== null ?
+                            <CardColumns>
                                 <Card style={{ width: '18rem' }}>
                                     <Card.Img variant="top" src={`https://image.tmdb.org/t/p/original${i.imgUrl}`} />
                                     <Card.Body>
@@ -20,6 +22,7 @@ export class Movies extends Component {
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
+                                </CardColumns>
                                 : false}
                         </>
                     )

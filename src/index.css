@@ -66,3 +66,13 @@ img#image {
   left: 18px;
   width: 30%;
 }
+.card-group {
+  width: 30%;
+  display: inline-flex;
+  margin: 5px;
+}
+.card-columns {
+  display: inline-flex;
+  margin: 21px;
+  align-items: stretch;
+}
